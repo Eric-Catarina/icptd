@@ -33,7 +33,6 @@ public class MecanicaTorre : MonoBehaviour
         GameObject instanciaMissilAtual = Instantiate(prefabMissil, posicaoPontoDisparo, transform.rotation);
         MovimentoMissil MovimentoMissilAtualScript = instanciaMissilAtual.GetComponent<MovimentoMissil>();
         MovimentoMissilAtualScript.recebeAlvo(inimigoAlvo);
-
     }
 
     void Start()

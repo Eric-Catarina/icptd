@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44659364, g: 0.4964301, b: 0.5748256, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -206,7 +206,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -303,21 +303,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inimigo
       objectReference: {fileID: 0}
+    - target: {fileID: 9188183802665608712, guid: 93da56b7cf2befd4a987cd16fd6cd305, type: 3}
+      propertyPath: pontosDeVida
+      value: 1500
+      objectReference: {fileID: 0}
     - target: {fileID: 9188183802665608713, guid: 93da56b7cf2befd4a987cd16fd6cd305, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9188183802665608713, guid: 93da56b7cf2befd4a987cd16fd6cd305, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 953.80585
+      value: 970
       objectReference: {fileID: 0}
     - target: {fileID: 9188183802665608713, guid: 93da56b7cf2befd4a987cd16fd6cd305, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40.000015
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 9188183802665608713, guid: 93da56b7cf2befd4a987cd16fd6cd305, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 94.26239
+      value: 110
       objectReference: {fileID: 0}
     - target: {fileID: 9188183802665608713, guid: 93da56b7cf2befd4a987cd16fd6cd305, type: 3}
       propertyPath: m_LocalRotation.w
@@ -380,6 +384,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1695074461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1695074462}
+  - component: {fileID: 1695074463}
+  m_Layer: 0
+  m_Name: SpawnDeInimigos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1695074462
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695074461}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 970, y: 40, z: 110}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1695074463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695074461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f09ed01cedfe2e519a041b412a45023d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inimigo: {fileID: 9188183802665608706, guid: 93da56b7cf2befd4a987cd16fd6cd305, type: 3}
+  tempoDeCriacao: 1.05
 --- !u!1 &1847070950
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +569,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2248543476664556083, guid: 0cb1ee0fbd182b248b4a33f6cbaf516e, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2248543476664556083, guid: 0cb1ee0fbd182b248b4a33f6cbaf516e, type: 3}
       propertyPath: m_LocalScale.x
@@ -535,15 +585,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2248543476664556083, guid: 0cb1ee0fbd182b248b4a33f6cbaf516e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 651
+      value: 355
       objectReference: {fileID: 0}
     - target: {fileID: 2248543476664556083, guid: 0cb1ee0fbd182b248b4a33f6cbaf516e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 193.4
+      value: 89
       objectReference: {fileID: 0}
     - target: {fileID: 2248543476664556083, guid: 0cb1ee0fbd182b248b4a33f6cbaf516e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 329
+      value: 355
       objectReference: {fileID: 0}
     - target: {fileID: 2248543476664556083, guid: 0cb1ee0fbd182b248b4a33f6cbaf516e, type: 3}
       propertyPath: m_LocalRotation.w
