@@ -12,7 +12,7 @@ public class MovimentoMissil : MonoBehaviour
     private Vector3 frenteMissil;
     private Vector3 deslocamentoFrontal;
     
-    private GameObject alvo;
+    private Enemy alvo;
     
 
     private void moveMissil(){
@@ -23,15 +23,18 @@ public class MovimentoMissil : MonoBehaviour
     }
 
     private void alteraDirecao(){
-        Vector3 direcaoDoMissil = transform.position;
-        Vector3 direcaoDoInimigo = alvo.transform.position;
-        Vector3 novaDirecao = direcaoDoInimigo - direcaoDoMissil;
-        transform.rotation = Quaternion.LookRotation (novaDirecao);
+        if (alvo != null)
+        {
+            Vector3 direcaoDoMissil = transform.position;
+            Vector3 direcaoDoInimigo = alvo.transform.position;
+            Vector3 novaDirecao = direcaoDoInimigo - direcaoDoMissil;
+            transform.rotation = Quaternion.LookRotation(novaDirecao);
+        }
     }
 
-    private void setaAlvo()
+    public void setaAlvo(Enemy alvo)
     {
-        alvo = GameObject.FindGameObjectWithTag("InimigoTag");
+        this.alvo = alvo;
     }
 
     
@@ -39,7 +42,7 @@ public class MovimentoMissil : MonoBehaviour
 
     void Start()
     {
-        setaAlvo();
+        
     }
 
     // Update is called once per frame

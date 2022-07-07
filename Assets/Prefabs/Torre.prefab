@@ -77,8 +77,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d95a459d1175bf499e18a11a84fd3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  estadoAtual: 0
   prefabMissil: {fileID: 1186839819855346570, guid: f60c24c7c10ff9d498076daa396ab9c6, type: 3}
   tempoDeRecarga: 0.5
+  pontoDoDisparo: {fileID: 2555627676955349038}
+  raioDeAlcance: 400
 --- !u!1 &3892120415865932941
 GameObject:
   m_ObjectHideFlags: 0
