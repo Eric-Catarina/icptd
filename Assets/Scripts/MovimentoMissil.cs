@@ -12,7 +12,8 @@ public class MovimentoMissil : MonoBehaviour
     private Vector3 frenteMissil;
     private Vector3 deslocamentoFrontal;
     
-    private Enemy alvo;
+    private GameObject alvo;
+    
 
     private void moveMissil(){
         posicaoAtualMissil = transform.position;
@@ -28,15 +29,17 @@ public class MovimentoMissil : MonoBehaviour
         transform.rotation = Quaternion.LookRotation (novaDirecao);
     }
 
-    public void recebeAlvo(Enemy alvo){
-        this.alvo = alvo;
+    private void setaAlvo()
+    {
+        alvo = GameObject.FindGameObjectWithTag("InimigoTag");
     }
+
+    
 
 
     void Start()
     {
-        
-
+        setaAlvo();
     }
 
     // Update is called once per frame

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9188183802665608709}
   m_Layer: 0
   m_Name: Inimigo
-  m_TagString: Untagged
+  m_TagString: InimigoTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1059cbcc79177664ab3c7c19c842717d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosDeVida: 150
+  pontosDeVida: 30
 --- !u!195 &9188183802665608709
 NavMeshAgent:
   m_ObjectHideFlags: 0

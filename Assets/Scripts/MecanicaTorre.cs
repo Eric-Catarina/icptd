@@ -11,13 +11,14 @@ public class MecanicaTorre : MonoBehaviour
     private float tempoDeRecarga = 1f;
     Vector3 posicaoPontoDisparo;
     GameObject pontoDoDisparo;
-    private Enemy inimigoAlvo;
+    private GameObject inimigoAlvo;
 
-
+    
+    
     
     private void Atira()
     {
-        inimigoAlvo = FindObjectOfType<Enemy>();
+        inimigoAlvo = GameObject.FindWithTag("InimigoTag");
         if (inimigoAlvo){
 
             float tempoAtual = Time.time;
@@ -25,14 +26,14 @@ public class MecanicaTorre : MonoBehaviour
             {
                 momentoDoUltimoDisparo = tempoAtual;
                 disparaMissil();
+                
             }
         }
     }
     private void disparaMissil()
     {
         GameObject instanciaMissilAtual = Instantiate(prefabMissil, posicaoPontoDisparo, transform.rotation);
-        MovimentoMissil MovimentoMissilAtualScript = instanciaMissilAtual.GetComponent<MovimentoMissil>();
-        MovimentoMissilAtualScript.recebeAlvo(inimigoAlvo);
+        
     }
 
     void Start()
@@ -41,8 +42,7 @@ public class MecanicaTorre : MonoBehaviour
         pontoDoDisparo = GameObject.Find("CanhaoDaTorre/PontoDeDisparo");
 
         posicaoPontoDisparo = pontoDoDisparo.transform.position;
-
-
+        
     }
 
     // Update is called once per frame
