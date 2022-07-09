@@ -33,7 +33,7 @@ public class ConstroiTorreClique : MonoBehaviour
             if (infoDoRaio.collider)
             {
                 posicaoDoElemento = infoDoRaio.point;
-                posicaoDoElemento.y += 20;
+                posicaoDoElemento.y += 0;
                 Instantiate(torrePrefab, posicaoDoElemento, Quaternion.identity);
             }
         }
