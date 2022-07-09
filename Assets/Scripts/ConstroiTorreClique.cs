@@ -10,8 +10,11 @@ public class ConstroiTorreClique : MonoBehaviour
     {
         return Input.GetMouseButtonDown(0);
     }
+
+    private Vector3 posicaoDoElemento;
     void Start()
     {
+        
     }
     
     void Update()
@@ -23,13 +26,14 @@ public class ConstroiTorreClique : MonoBehaviour
             Vector3 pontoDoClique = Input.mousePosition;
             Ray raioDaCamera = Camera.main.ScreenPointToRay (pontoDoClique);
             
-            float comprimentoMaximo = 10000000.0f;
+            float comprimentoMaximo = 1000000.0f;
             
             Physics.Raycast (raioDaCamera, out RaycastHit infoDoRaio, comprimentoMaximo);
             
             if (infoDoRaio.collider)
             {
-                Vector3 posicaoDoElemento = infoDoRaio.point;
+                posicaoDoElemento = infoDoRaio.point;
+                posicaoDoElemento.y += 20;
                 Instantiate(torrePrefab, posicaoDoElemento, Quaternion.identity);
             }
         }
