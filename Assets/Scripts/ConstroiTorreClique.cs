@@ -16,25 +16,36 @@ public class ConstroiTorreClique : MonoBehaviour
     {
         
     }
+
+    public int torresRestantes = 7;
+
+    public int retornaTorresRestantes()
+    {
+        return torresRestantes;
+    }
     
     void Update()
     {
-        if (Clicou())
-        {
-            Debug.Log("clicou");
-            
-            Vector3 pontoDoClique = Input.mousePosition;
-            Ray raioDaCamera = Camera.main.ScreenPointToRay (pontoDoClique);
-            
-            float comprimentoMaximo = 1000000.0f;
-            
-            Physics.Raycast (raioDaCamera, out RaycastHit infoDoRaio, comprimentoMaximo);
-            
-            if (infoDoRaio.collider)
+        if (torresRestantes >0 ){
+            if (Clicou())
             {
-                posicaoDoElemento = infoDoRaio.point;
-                posicaoDoElemento.y += 0;
-                Instantiate(torrePrefab, posicaoDoElemento, Quaternion.identity);
+                Debug.Log("clicou");
+
+                Vector3 pontoDoClique = Input.mousePosition;
+                Ray raioDaCamera = Camera.main.ScreenPointToRay(pontoDoClique);
+
+                float comprimentoMaximo = 1000000.0f;
+
+                Physics.Raycast(raioDaCamera, out RaycastHit infoDoRaio, comprimentoMaximo);
+
+                if (infoDoRaio.collider)
+                {
+                    posicaoDoElemento = infoDoRaio.point;
+                    posicaoDoElemento.y += 0;
+                    Instantiate(torrePrefab, posicaoDoElemento, Quaternion.identity);
+                }
+
+                torresRestantes--;
             }
         }
     }
