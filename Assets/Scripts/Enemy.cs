@@ -6,7 +6,8 @@ public class Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
     
-    [SerializeField]
+    
+    [SerializeField] private SonsManager managerDeSons;
     private float pontosDeVida = 100;
 
     private void OnTriggerEnter(Collider objetoColidido){
@@ -14,6 +15,7 @@ public class Enemy : MonoBehaviour
     }
     private void hpMenorQueZero(){
         if (pontosDeVida <= 0){
+            managerDeSons.tocaSomMorte();
             Destroy(this.gameObject);
         }
     }
@@ -24,13 +26,14 @@ public class Enemy : MonoBehaviour
         GameObject destino = GameObject.Find("FimDaPista");
         Vector3 posicaoDestino = destino.transform.position;
         agente.SetDestination(posicaoDestino);
-        
+        managerDeSons = GameObject.FindObjectOfType<SonsManager>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
 
 
         hpMenorQueZero();

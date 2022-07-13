@@ -113,7 +113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1059cbcc79177664ab3c7c19c842717d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pontosDeVida: 100
+  audioMorteObject: {fileID: 1845601462123830532, guid: 930c3d5501b6cdae7a1d2280e90bb5ec, type: 3}
+  audioSpawn: {fileID: 0}
+  managerDeSons: {fileID: 5064956839757659691, guid: 930c3d5501b6cdae7a1d2280e90bb5ec, type: 3}
 --- !u!195 &9188183802665608709
 NavMeshAgent:
   m_ObjectHideFlags: 0
