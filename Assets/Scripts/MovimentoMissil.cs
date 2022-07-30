@@ -6,8 +6,7 @@ public class MovimentoMissil : MonoBehaviour
 {
     
     [SerializeField]
-    
-    private float velocidadeMissil = 10f;
+    private float velocidadeMissil = 20f;
     private Vector3 posicaoAtualMissil;
     private Vector3 frenteMissil;
     private Vector3 deslocamentoFrontal;

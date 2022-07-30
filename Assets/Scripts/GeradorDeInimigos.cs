@@ -8,28 +8,26 @@ public class GeradorDeInimigos : MonoBehaviour
     [SerializeField]
     private GameObject inimigo;
     
-    private float momentoDaUltimaGeracao;
+    [SerializeField]
+    private float momentoDaUltimaGeracao, contadorInimigosSpawnados = 0, numeroDeInimigosNaWave = 20;
 
     [Range(0,3)]
     [SerializeField] private float tempoDeCriacao = 2f;
     
     private void GeraInimigo () {
         float tempoAtual = Time.time;
-        if (tempoAtual > momentoDaUltimaGeracao + tempoDeCriacao){
+        if (tempoAtual > momentoDaUltimaGeracao + tempoDeCriacao && contadorInimigosSpawnados<numeroDeInimigosNaWave){
            momentoDaUltimaGeracao = tempoAtual;
            Vector3 posicaoDoGerador = this.transform.position;
            Instantiate (inimigo, posicaoDoGerador,
            Quaternion.identity);
+           contadorInimigosSpawnados ++;
         }
     }
-    
-
     void Start()
     {
         
     }
-
-    
     void Update()
     {
         GeraInimigo ();

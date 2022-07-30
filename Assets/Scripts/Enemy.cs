@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
         Vector3 posicaoDestino = destino.transform.position;
         agente.SetDestination(posicaoDestino);
         managerDeSons = GameObject.FindObjectOfType<SonsManager>();
+        managerDeSons.tocaSomSpawn();
 
     }
 

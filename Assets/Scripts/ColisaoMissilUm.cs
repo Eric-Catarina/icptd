@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ColisaoMissilUm : MonoBehaviour
 {
-   
+    [SerializeField]
+    private SonsManager managerDeSons;
     
     private void OnTriggerEnter(Collider objetoColidido){
+            managerDeSons.tocaSomHit();
             Destroy(this.gameObject);
         }
     
