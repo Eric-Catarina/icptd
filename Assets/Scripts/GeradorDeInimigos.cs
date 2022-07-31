@@ -9,11 +9,17 @@ public class GeradorDeInimigos : MonoBehaviour
     private GameObject inimigo;
     
     [SerializeField]
-    private float momentoDaUltimaGeracao, contadorInimigosSpawnados = 0, numeroDeInimigosNaWave = 20;
+    private float momentoDaUltimaGeracao;
+    [SerializeField]
+    private int contadorInimigosSpawnados = 0, numeroDeInimigosNaWave = 20;
 
     [Range(0,3)]
     [SerializeField] private float tempoDeCriacao = 2f;
     
+    public int RetornaInimigosNaWave(){
+        return numeroDeInimigosNaWave;
+    }
+
     private void GeraInimigo () {
         float tempoAtual = Time.time;
         if (tempoAtual > momentoDaUltimaGeracao + tempoDeCriacao && contadorInimigosSpawnados<numeroDeInimigosNaWave){

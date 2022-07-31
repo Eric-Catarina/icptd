@@ -6,19 +6,24 @@ public class Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
     
-    
+    public static int RetornaInimigosMortos(){
+        return inimigosMortos;
+    }
     [SerializeField] private SonsManager managerDeSons;
     private float pontosDeVida = 100;
 
     private void OnTriggerEnter(Collider objetoColidido){
         pontosDeVida -= CaracteristicasMissil.pontosDeDano;
     }
+    public static int inimigosMortos = 0;
     private void hpMenorQueZero(){
         if (pontosDeVida <= 0){
             managerDeSons.tocaSomMorte();
+            inimigosMortos ++;
             Destroy(this.gameObject);
         }
     }
+   
     
     void Start()
     {
@@ -28,6 +33,7 @@ public class Enemy : MonoBehaviour
         agente.SetDestination(posicaoDestino);
         managerDeSons = GameObject.FindObjectOfType<SonsManager>();
         managerDeSons.tocaSomSpawn();
+        
 
     }
 
